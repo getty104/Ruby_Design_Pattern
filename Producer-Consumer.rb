@@ -9,7 +9,7 @@ class Bank
 
 	def add
 		@m.synchronize{
-			while @money >10000
+			while @money >5000
 				puts "add wait"
 				@cv.wait(@m)
 			end
@@ -22,11 +22,11 @@ class Bank
 
 	def use
 		@m.synchronize{
-			while @money == 0
+			while @money <= 0
 				puts "use wait"
 				@cv.wait(@m)
 			end
-			n = (rand*1000).to_i
+			n = (rand*(@money)).to_i
 			@money -= n
 			puts "use:#{n} :#{@money}"
 			@cv.broadcast

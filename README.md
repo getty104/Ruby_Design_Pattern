@@ -4,6 +4,10 @@
 <p>参考サイト</p>
 <li>
 <a href= "http://morizyun.github.io/blog/ruby-design-pattern-matome-mokuzi/">酒と泪とRubyとRailsと</a>
+</li>
+<li>
 <a href="http://www.hyuki.com/dp/dpinfo.html">デザインパターン紹介</a>
+</li>
+<li>
 <a href="http://takuya-1st.hatenablog.jp/archive/category/マルチスレッド">それマグで！</a>
 </li>

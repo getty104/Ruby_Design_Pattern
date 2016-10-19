@@ -9,12 +9,10 @@ class Files
 		1
 	end
 
-	def show
+	def show(dammy)
 		@@num+=1
 		puts "file#{@@num}"
 	end
-
-
 end
 
 class Directorys
@@ -29,21 +27,22 @@ class Directorys
 	end
 
 	def geta
-		ans=0
+		ans=1
 		@file.each do |obj|
 			ans += obj.geta
 		end
 		ans
 	end
 
-	def show
+	def show(space)
 		@@num+=1
-		puts "directory#{@@num}"
-		@@sp+=" "
+		puts "directory#{@@num}{"
 		@file.each do |obj|
-			print "#{@@sp}"
-			obj.show
+			print "#{space}"
+			obj.show(space+" ")
 		end
+		print(space)
+		puts "}"
 		
 	end
 end
@@ -62,8 +61,12 @@ d3 = Directorys.new
 d3.add(Files.new)
 
 d2.add(d3)
-
-d1.show
+d2.add(Files.new)
+d2.add(Files.new)
+d1.add(Files.new)
+d1.add(Files.new)
+d1.show("")
+puts "Amount of Data:#{d1.geta}"
 
 
 
